@@ -6,26 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DISTROADA</title>
+    <link rel="stylesheet" href="estilo.css">
 </head>
 
 <body>
     <h1>DISTROADA</h1>
-    <form action="insertar.php" method="POST">
-        <p>Nombre: <input type="text" name="nombre"></p>
-        <p>Version: <input type="text" name="version"></p>
-        <p>Descripción: <input type="text" name="descripcion"></p>
-        <p>Mes de lanzamiento: <input type="number" name="mes"></p>
-        <p>Año de lanzamiento: <input type="number" name="anno"></p>
-        <p>Estable: <select name="estable">
+
+    <div class="insertar">
+        <h3>Insertar Datos</h3>
+        <form action="insertar.php" method="POST">
+            <p>Nombre: <input type="text" name="nombre"></p>
+            <p>Version: <input type="text" name="version"></p>
+            <p>Descripción:</p>
+            <p><textarea name="descripcion" rows="10" cols="50"></textarea></p>
+            <p>Mes de lanzamiento: <input type="number" name="mes"></p>
+            <p>Año de lanzamiento: <input type="number" name="anno"></p>
+            <p>Estable: <select name="estable">
             <option value="1" selected>Si</option>
             <option value="0">No</option>
         </select>
-        </p>
-        <p>Distribución: <input type="text" name="distribucion"></p>
-        <input type="submit" value="Enviar">
-        <input type="reset" value="Borrar">
-        </p>
-    </form>
+            </p>
+            <p>Distribución: <input type="text" name="distribucion"></p>
+            <p>
+                <input type="submit" value="Enviar">
+                <input type="reset" value="Borrar">
+            </p>
+        </form>
+    </div>
+
+    <div class="eliminar">
+        <h3>Eliminar Datos</h3>
+        <form action="eliminar.php" method="POST">
+            <p>ID: <input type="number" name="id"></p>
+            <p>
+                <input type="submit" value="Enviar">
+                <input type="reset" value="Borrar">
+            </p>
+        </form>
+    </div>
+
 </body>
 
 </html>

@@ -1,0 +1,16 @@
+h1 {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.insertar {
+    border-color: black;
+    border-style: solid;
+    padding-left: 5%;
+}
+
+.eliminar {
+    border-color: black;
+    border-style: solid;
+    padding-left: 5%;
+}
