@@ -1,3 +1,6 @@
+<?php
+$conexion = mysqli_connect( 'localhost', 'root', '', 'distroada');
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -12,6 +15,43 @@
 <body>
     <h1>DISTROADA</h1>
 
+    <div class="mostrar">
+        <h3>Mostrar Datos</h3>
+        <table border="1">
+            <tr>
+                <td>ID</td>
+                <td>Nombre</td>
+                <td>Versión</td>
+                <td>Descripción</td>
+                <td>Mes de lanzamiento</td>
+                <td>Año de lanzamiento</td>
+                <td>Estable</td>
+                <td>Distribución</td>
+            </tr>
+            <?php
+            $sql ="SELECT * From distros";
+            $result=mysqli_query($conexion,$sql);
+
+            while($mostrar=mysqli_fetch_array($result)){
+
+            
+            ?>
+            <tr>
+                <td><?php echo $mostrar['id'] ?></td>
+                <td><?php echo $mostrar['nombre'] ?></td>
+                <td><?php echo $mostrar['version'] ?></td>
+                <td><?php echo $mostrar['descripcion'] ?></td>
+                <td><?php echo $mostrar['mes'] ?></td>
+                <td><?php echo $mostrar['anno'] ?></td>
+                <td><?php echo $mostrar['estable'] ?></td>
+                <td><?php echo $mostrar['distribucion'] ?></td>
+            </tr>
+            <?php
+            }
+                ?>
+        </table>
+    </div>
+
     <div class="insertar">
         <h3>Insertar Datos</h3>
         <form action="insertar.php" method="POST">
@@ -22,9 +62,9 @@
             <p>Mes de lanzamiento: <input type="number" name="mes"></p>
             <p>Año de lanzamiento: <input type="number" name="anno"></p>
             <p>Estable: <select name="estable">
-            <option value="1" selected>Si</option>
-            <option value="0">No</option>
-        </select>
+                    <option value="1" selected>Si</option>
+                    <option value="0">No</option>
+                </select>
             </p>
             <p>Distribución: <input type="text" name="distribucion"></p>
             <p>
@@ -44,6 +84,8 @@
             </p>
         </form>
     </div>
+
+
 
 </body>
 
