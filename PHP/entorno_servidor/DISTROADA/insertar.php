@@ -4,9 +4,7 @@
   # Conexión a la base de datos
     $conn = mysqli_connect( 'localhost', 'root', '', 'distroada');
 
-  if (condition) {
-      # code...
-  }
+
   # Sentencia para insertar registros en la base de datos
   $insert = "INSERT INTO `distros`(`nombre`, `version`, `descripcion`, `mes`, `anno`, `estable`, `distribucion`) VALUES ('$_POST[nombre]','$_POST[version]','$_POST[descripcion]','$_POST[mes]','$_POST[anno]','$_POST[estable]','$_POST[distribucion]')";
 

@@ -16,7 +16,11 @@
         <p>Descripción: <input type="text" name="descripcion"></p>
         <p>Mes de lanzamiento: <input type="number" name="mes"></p>
         <p>Año de lanzamiento: <input type="number" name="anno"></p>
-        <p>Estable: <input type="checkbox" name="estable"></p>
+        <p>Estable: <select name="estable">
+            <option value="1" selected>Si</option>
+            <option value="0">No</option>
+        </select>
+        </p>
         <p>Distribución: <input type="text" name="distribucion"></p>
         <input type="submit" value="Enviar">
         <input type="reset" value="Borrar">
