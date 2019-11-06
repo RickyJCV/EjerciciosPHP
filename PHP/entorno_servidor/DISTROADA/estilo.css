@@ -6,15 +6,24 @@ h1 {
 .insertar {
     border-color: black;
     border-style: solid;
-    padding-left: 5%;
+    padding-left: 1%;
 }
 
-.eliminar {
-    border-color: black;
-    border-style: solid;
-    padding-left: 5%;
-}
 .mostrar{
      border-color: black;
     border-style: solid;
+}
+.actualizar{
+     border-color: black;
+    border-style: solid;
+    padding-left: 1%;
+}
+div{
+    margin-bottom: 1%;
+}
+table{
+    padding:1%;
+}
+.h3mostrar{
+    padding-left:1%;
 }

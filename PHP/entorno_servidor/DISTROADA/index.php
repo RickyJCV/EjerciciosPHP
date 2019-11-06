@@ -16,7 +16,7 @@ $conexion = mysqli_connect( 'localhost', 'root', '', 'distroada');
     <h1>DISTROADA</h1>
 
     <div class="mostrar">
-        <h3>Mostrar Datos</h3>
+        <h3 class="h3mostrar">Mostrar/Eliminar Datos</h3>
         <table border="1">
             <tr>
                 <td>ID</td>
@@ -36,6 +36,7 @@ $conexion = mysqli_connect( 'localhost', 'root', '', 'distroada');
 
             
             ?>
+            <form action="eliminar.php" method="POST">
             <tr>
                 <td><?php echo $mostrar['id'] ?></td>
                 <td><?php echo $mostrar['nombre'] ?></td>
@@ -45,7 +46,9 @@ $conexion = mysqli_connect( 'localhost', 'root', '', 'distroada');
                 <td><?php echo $mostrar['anno'] ?></td>
                 <td><?php echo $mostrar['estable'] ?></td>
                 <td><?php echo $mostrar['distribucion'] ?></td>
+                <td><button type="submit" name ="borrar" value="<?php echo $mostrar['id']?>">Eliminar</button></td>
             </tr>
+            </form>
             <?php
             }
                 ?>
@@ -53,7 +56,7 @@ $conexion = mysqli_connect( 'localhost', 'root', '', 'distroada');
     </div>
 
     <div class="insertar">
-        <h3>Insertar Datos</h3>
+        <h3 class="h3insertar">Insertar Datos</h3>
         <form action="insertar.php" method="POST">
             <p>Nombre: <input type="text" name="nombre"></p>
             <p>Version: <input type="text" name="version"></p>
@@ -68,24 +71,34 @@ $conexion = mysqli_connect( 'localhost', 'root', '', 'distroada');
             </p>
             <p>Distribución: <input type="text" name="distribucion"></p>
             <p>
-                <input type="submit" value="Enviar">
+                <input type="submit" value="Insertar">
                 <input type="reset" value="Borrar">
             </p>
         </form>
     </div>
 
-    <div class="eliminar">
-        <h3>Eliminar Datos</h3>
-        <form action="eliminar.php" method="POST">
+    <div class="actualizar">
+        <h3 class="h3actualizar">Actualizar Datos</h3>
+        <form action="actualizar.php" method="POST">
             <p>ID: <input type="number" name="id"></p>
+            <p>Nombre: <input type="text" name="nombre"></p>
+            <p>Version: <input type="text" name="version"></p>
+            <p>Descripción:</p>
+            <p><textarea name="descripcion" rows="10" cols="50"></textarea></p>
+            <p>Mes de lanzamiento: <input type="number" name="mes"></p>
+            <p>Año de lanzamiento: <input type="number" name="anno"></p>
+            <p>Estable: <select name="estable">
+                    <option value="1" selected>Si</option>
+                    <option value="0">No</option>
+                </select>
+            </p>
+            <p>Distribución: <input type="text" name="distribucion"></p>
             <p>
-                <input type="submit" value="Enviar">
+                <input type="submit" value="Actualizar">
                 <input type="reset" value="Borrar">
             </p>
         </form>
     </div>
-
-
 
 </body>
 
