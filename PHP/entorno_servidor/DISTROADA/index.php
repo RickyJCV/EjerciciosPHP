@@ -37,17 +37,17 @@ $conexion = mysqli_connect( 'localhost', 'root', '', 'distroada');
             
             ?>
             <form action="eliminar.php" method="POST">
-            <tr>
-                <td><?php echo $mostrar['id'] ?></td>
-                <td><?php echo $mostrar['nombre'] ?></td>
-                <td><?php echo $mostrar['version'] ?></td>
-                <td><?php echo $mostrar['descripcion'] ?></td>
-                <td><?php echo $mostrar['mes'] ?></td>
-                <td><?php echo $mostrar['anno'] ?></td>
-                <td><?php echo $mostrar['estable'] ?></td>
-                <td><?php echo $mostrar['distribucion'] ?></td>
-                <td><button type="submit" name ="borrar" value="<?php echo $mostrar['id']?>">Eliminar</button></td>
-            </tr>
+                <tr>
+                    <td><?php echo $mostrar['id'] ?></td>
+                    <td><?php echo $mostrar['nombre'] ?></td>
+                    <td><?php echo $mostrar['version'] ?></td>
+                    <td><?php echo $mostrar['descripcion'] ?></td>
+                    <td><?php echo $mostrar['mes'] ?></td>
+                    <td><?php echo $mostrar['anno'] ?></td>
+                    <td><?php echo $mostrar['estable'] ?></td>
+                    <td><?php echo $mostrar['distribucion'] ?></td>
+                    <td><button type="submit" name="borrar" value="<?php echo $mostrar['id']?>">Eliminar</button></td>
+                </tr>
             </form>
             <?php
             }
@@ -62,7 +62,22 @@ $conexion = mysqli_connect( 'localhost', 'root', '', 'distroada');
             <p>Version: <input type="text" name="version"></p>
             <p>Descripción:</p>
             <p><textarea name="descripcion" rows="10" cols="50"></textarea></p>
-            <p>Mes de lanzamiento: <input type="number" name="mes"></p>
+            <p>Mes de lanzamiento:
+                <select name="mes">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+            </p>
             <p>Año de lanzamiento: <input type="number" name="anno"></p>
             <p>Estable: <select name="estable">
                     <option value="1" selected>Si</option>
@@ -85,7 +100,20 @@ $conexion = mysqli_connect( 'localhost', 'root', '', 'distroada');
             <p>Version: <input type="text" name="version"></p>
             <p>Descripción:</p>
             <p><textarea name="descripcion" rows="10" cols="50"></textarea></p>
-            <p>Mes de lanzamiento: <input type="number" name="mes"></p>
+            <p>Mes de lanzamiento: <select name="mes">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select></p>
             <p>Año de lanzamiento: <input type="number" name="anno"></p>
             <p>Estable: <select name="estable">
                     <option value="1" selected>Si</option>
