@@ -15,4 +15,6 @@
 
   # Cerramos la conexión
   mysqli_close( $conn);
+
+   header("Refresh:0;url=index.php");
   ?>

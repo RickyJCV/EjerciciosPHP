@@ -95,36 +95,43 @@ $conexion = mysqli_connect( 'localhost', 'root', '', 'distroada');
     <div class="actualizar">
         <h3 class="h3actualizar">Actualizar Datos</h3>
         <form action="actualizar.php" method="POST">
-            <p>ID: <input type="number" name="id"></p>
-            <p>Nombre: <input type="text" name="nombre"></p>
-            <p>Version: <input type="text" name="version"></p>
-            <p>Descripción:</p>
-            <p><textarea name="descripcion" rows="10" cols="50"></textarea></p>
-            <p>Mes de lanzamiento: <select name="mes">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                </select></p>
-            <p>Año de lanzamiento: <input type="number" name="anno"></p>
-            <p>Estable: <select name="estable">
-                    <option value="1" selected>Si</option>
-                    <option value="0">No</option>
+            <p>ID:
+                <select name="id">
+                    <?php
+                foreach (mysqli_query ( $conexion, "SELECT `id` FROM `distros`;") as $array_de_id => $valor) {
+                    echo "<option value='" . $valor['id'] . "'>" . $valor['id'] . "</option>";
+                }
+            ?>
                 </select>
-            </p>
-            <p>Distribución: <input type="text" name="distribucion"></p>
-            <p>
-                <input type="submit" value="Actualizar">
-                <input type="reset" value="Borrar">
-            </p>
+                <p>Nombre: <input type="text" name="nombre"></p>
+                <p>Version: <input type="text" name="version"></p>
+                <p>Descripción:</p>
+                <p><textarea name="descripcion" rows="10" cols="50"></textarea></p>
+                <p>Mes de lanzamiento: <select name="mes">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select></p>
+                <p>Año de lanzamiento: <input type="number" name="anno"></p>
+                <p>Estable: <select name="estable">
+                        <option value="1" selected>Si</option>
+                        <option value="0">No</option>
+                    </select>
+                </p>
+                <p>Distribución: <input type="text" name="distribucion"></p>
+                <p>
+                    <input type="submit" value="Actualizar">
+                    <input type="reset" value="Borrar">
+                </p>
         </form>
     </div>
 
