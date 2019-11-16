@@ -1,6 +1,10 @@
 h1 {
     text-align: center;
-    font-family: 'Courier New', Courier, monospace;
+    
+}
+* {
+font-family: 'Courier New', Courier, monospace;
+background-color: #fff8dc;
 }
 
 .insertar {
@@ -26,4 +30,21 @@ table{
 }
 .h3mostrar{
     padding-left:1%;
+}
+.tabla{
+    background-color: #ff6000;
+    font-weight: bold;
+}
+.tabla2{
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+button{
+    background-color: #ff6000;
+    font-weight: bold;
+}
+.botones{
+    background-color: #ff6000;
+    font-weight: bold;
 }

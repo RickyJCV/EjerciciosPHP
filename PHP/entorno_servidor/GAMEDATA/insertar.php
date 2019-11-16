@@ -2,7 +2,7 @@
 
   
   # Conexión a la base de datos
-    $conn = mysqli_connect( 'localhost', 'root', '', 'gamedata');
+    $conn = mysqli_connect( '127.0.0.1:33065', 'root', '', 'gamedata');
 
 
   # Sentencia para insertar registros en la base de datos

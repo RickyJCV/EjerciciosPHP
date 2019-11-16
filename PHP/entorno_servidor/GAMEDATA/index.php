@@ -1,5 +1,5 @@
 <?php
-$conexion = mysqli_connect( 'localhost', 'root', '', 'gamedata');
+$conexion = mysqli_connect( '127.0.0.1:33065', 'root', '', 'gamedata');
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -19,15 +19,15 @@ $conexion = mysqli_connect( 'localhost', 'root', '', 'gamedata');
         <h3 class="h3mostrar">Mostrar/Eliminar Datos</h3>
         <table border="1">
             <tr>
-                <td>ID</td>
-                <td>Nombre</td>
-                <td>Género</td>
-                <td>Descripción</td>
-                <td>Plataforma</td>
-                <td>Desarrolladora</td>
-                <td>Mes de lanzamiento</td>
-                <td>Año de lanzamiento</td>
-                <td>Precio</td>
+                <td class="tabla">ID</td>
+                <td class="tabla">Nombre</td>
+                <td class="tabla">Género</td>
+                <td class="tabla">Descripción</td>
+                <td class="tabla">Plataforma</td>
+                <td class="tabla">Desarrolladora</td>
+                <td class="tabla">Mes de lanzamiento</td>
+                <td class="tabla">Año de lanzamiento</td>
+                <td class="tabla">Precio</td>
             </tr>
             <?php
             $sql ="SELECT * From games";
@@ -39,15 +39,15 @@ $conexion = mysqli_connect( 'localhost', 'root', '', 'gamedata');
             ?>
             <form action="eliminar.php" method="POST">
                 <tr>
-                    <td><?php echo $mostrar['id'] ?></td>
-                    <td><?php echo $mostrar['nombre'] ?></td>
-                    <td><?php echo $mostrar['genero'] ?></td>
-                    <td><?php echo $mostrar['descripcion'] ?></td>
-                    <td><?php echo $mostrar['plataforma'] ?></td>
-                    <td><?php echo $mostrar['desarrolladora'] ?></td>
-                    <td><?php echo $mostrar['mes'] ?></td>
-                    <td><?php echo $mostrar['anno'] ?></td>
-                    <td><?php echo $mostrar['precio'] ?></td>
+                    <td class="tabla2"><?php echo $mostrar['id'] ?></td>
+                    <td class="tabla2"><?php echo $mostrar['nombre'] ?></td>
+                    <td class="tabla2"><?php echo $mostrar['genero'] ?></td>
+                    <td class="tabla2"><?php echo $mostrar['descripcion'] ?></td>
+                    <td class="tabla2"><?php echo $mostrar['plataforma'] ?></td>
+                    <td class="tabla2"><?php echo $mostrar['desarrolladora'] ?></td>
+                    <td class="tabla2"><?php echo $mostrar['mes'] ?></td>
+                    <td class="tabla2"><?php echo $mostrar['anno'] ?></td>
+                    <td class="tabla2"><?php echo $mostrar['precio'] ?></td>
                     <td><button type="submit" name="borrar" value="<?php echo $mostrar['id']?>">Eliminar</button></td>
                 </tr>
             </form>
@@ -85,8 +85,8 @@ $conexion = mysqli_connect( 'localhost', 'root', '', 'gamedata');
             <p>Año de lanzamiento: <input type="number" name="anno"></p>
             <p>Precio: <input type="number" name="precio"></p>
             <p>
-                <input type="submit" value="Insertar">
-                <input type="reset" value="Borrar">
+                <input class="botones" type="submit" value="Insertar">
+                <input class="botones" type="reset" value="Borrar">
             </p>
         </form>
     </div>
@@ -127,8 +127,8 @@ $conexion = mysqli_connect( 'localhost', 'root', '', 'gamedata');
                 <p>Año de lanzamiento: <input type="number" name="anno"></p>
                 <p>Precio: <input type="number" name="precio"></p>
                 <p>
-                    <input type="submit" value="Actualizar">
-                    <input type="reset" value="Borrar">
+                    <input class="botones" type="submit" value="Actualizar">
+                    <input class="botones" type="reset" value="Borrar">
                 </p>
         </form>
     </div>
