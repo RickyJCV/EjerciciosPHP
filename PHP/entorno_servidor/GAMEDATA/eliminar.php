@@ -2,7 +2,7 @@
 
   
   # Conexión a la base de datos
-    $conn = mysqli_connect( '127.0.0.1:33065', 'root', '', 'gamedata');
+    $conn = mysqli_connect( 'localhost', 'root', '', 'gamedata');
 
   # Sentencia para borrar registros de la base de datos
   $delete = "delete from games where id = '$_POST[borrar]'";

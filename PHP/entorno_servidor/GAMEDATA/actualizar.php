@@ -2,7 +2,7 @@
 
   
   # Conexión a la base de datos
-  $conn = mysqli_connect( '127.0.0.1:33065', 'root', '', 'gamedata');
+  $conn = mysqli_connect( 'localhost', 'root', '', 'gamedata');
 
   # Sentencia para actualizar un registro
     $update = "update games set nombre = '$_POST[nombre]', genero ='$_POST[genero]',

@@ -1,5 +1,5 @@
 <?php
-$conexion = mysqli_connect( '127.0.0.1:33065', 'root', '', 'gamedata');
+$conexion = mysqli_connect( 'localhost', 'root', '', 'gamedata');
 ?>
 <!DOCTYPE html>
 <html lang="es">
